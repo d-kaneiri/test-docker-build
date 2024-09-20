@@ -1,5 +1,5 @@
 # ベースイメージの指定
-FROM node:18-slim
+FROM mcr.microsoft.com/devcontainers/typescript-node:18
 
 # 作業ディレクトリの設定
 WORKDIR /workspaces/
