@@ -1,0 +1,30 @@
+{
+    "name": "Dev Container build test",
+    "dockerFile": "Dockerfile",
+    "context": ".",
+    "forwardPorts": [4321],
+    "workspaceFolder": "/workspaces/",
+    "runArgs": ["--name", "container-build-test"],
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "prettier.documentSelectors": ["**/*.astro"],
+          "[astro]": {
+              "editor.defaultFormatter": "esbenp.prettier-vscode"
+          },
+          "editor.formatOnSave": true
+        },
+        "extensions": [
+          "ms-ceintl.vscode-language-pack-ja",
+          "astro-build.astro-vscode",
+          "esbenp.prettier-vscode",
+          "sheltonlouis.astro-snippets",
+          "ms-azuretools.vscode-docker",
+          "github.vscode-github-actions"
+        ]
+      }
+    },
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && npm install",
+    "remoteUser": "node"
+  }
+  
